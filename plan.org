@@ -1,0 +1,3 @@
+* Plans for results directory cleaner
+No ideas so far.
+** subheader

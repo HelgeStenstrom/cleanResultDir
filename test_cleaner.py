@@ -22,6 +22,14 @@ class CommandLineTests(unittest.TestCase):
         # also too few arguments
         self.assertRaises(SystemExit, c.parse_args, [])
 
+class MoreTests(unittest.TestCase):
+    def testNonExisting(self):
+        self.assertRaises(NotADirectoryError, c.checkIsRoot, '/nonexisting')
+
+class RunDirTests(unittest.TestCase):
+    def testHasFilesOnly(self):
+        'A results directory has a few results files, but no sub directory.'
+        self.assertFalse(c.hasFilesOnly('/'))
 
 if __name__ == '__main__':
     unittest.main()
